@@ -1,0 +1,8 @@
+steps:
+    - id: "Rodando teste unitário"
+      name: "gcr.io/cloud-builders/go"
+      args: ['go', 'test']
+    
+    - id: "Rodando build da imagem"
+      name: "gcr.io/cloud-builders/go"
+      args: ['go', 'build', '-ldflags', "'-s -w'", './src/main.go']
