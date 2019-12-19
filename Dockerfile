@@ -2,10 +2,7 @@ FROM golang:1.12-alpine AS builder
 
 WORKDIR /app
 
-# COPY ./src/main.go .
-# COPY ./src/*_test.go . 
-
-COPY . .
+COPY ./src/main.go .
 
 RUN go build -ldflags '-s -w' ./src/main.go
 RUN go test ./src
