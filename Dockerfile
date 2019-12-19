@@ -2,7 +2,7 @@ FROM golang:1.12-alpine AS builder
 
 WORKDIR /app
 
-COPY ./src/main.go .
+COPY ./src/app/main.go .
 
 RUN go build -ldflags '-s -w' main.go
 
