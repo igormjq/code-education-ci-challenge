@@ -6,5 +6,5 @@ steps:
     
     - id: "Rodando build da imagem"
       name: "gcr.io/cloud-builders/go"
-      env: ['GOPATH=workspace/src']
+      env: ['PROJECT_ROOT=workspace/src']
       args: ['build','./src/main.go']
