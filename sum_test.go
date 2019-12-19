@@ -6,7 +6,7 @@ func TestSum( t *testing.T ) {
 	
 	expectedResult := sum(5,5);
 
-	if expectedResult != 10 {
+	if expectedResult != 11 {
 		t.Errorf("Test sum failed. Expected = %v", 10);
 	}
 
