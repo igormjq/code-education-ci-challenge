@@ -12,6 +12,3 @@ steps:
   - id: "Gerando build da imagem"
     name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/go-build', '.']
-
-images:
-  - 'gcr.io/$PROJECT_ID/go-sum:latest'
