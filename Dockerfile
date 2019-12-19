@@ -2,11 +2,13 @@ FROM golang:1.12-alpine AS builder
 
 WORKDIR /app
 
-COPY ./src/main.go .
-COPY ./src/*_test.go . 
+# COPY ./src/main.go .
+# COPY ./src/*_test.go . 
 
-RUN go build -ldflags '-s -w' main.go
-RUN go test
+COPY . .
+
+RUN go build -ldflags '-s -w' ./src/main.go
+RUN go test ./src
 
 FROM scratch
 
