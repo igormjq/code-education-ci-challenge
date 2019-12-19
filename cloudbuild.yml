@@ -2,12 +2,12 @@ steps:
   - id: "Rodando teste unitário"
     name: "gcr.io/cloud-builders/go"
     env: ['PROJECT_ROOT=workspace']
-    args: ['test', './src/']
+    args: ['test', './src/app']
   
   - id: "Rodando build da imagem"
     name: "gcr.io/cloud-builders/go"
     env: ['PROJECT_ROOT=workspace']
-    args: ['build', './src/main.go']
+    args: ['build', './src/app/main.go']
   
   - id: "Gerando build da imagem"
     name: 'gcr.io/cloud-builders/docker'
