@@ -17,6 +17,6 @@ steps:
     name: 'gcr.io/$PROJECT_ID/go-sum'
     args: ['version']
   
-  images:
+images:
   - 'gcr.io/$PROJECT_ID/go-sum:latest'
   tags: ['cloud-builders-community']
