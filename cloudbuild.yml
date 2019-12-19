@@ -9,16 +9,12 @@ steps:
     env: ['PROJECT_ROOT=workspace']
     args: ['build', './src/main.go']
   
-  - id: "Push da imagem para o Registry"
+  - id: "Build da imagem"
     name: 'gcr.io/cloud-builders/docker'
-    args:
-    - 'build'
-    - '--build-arg'
-    - 'version=1.24.0'
-    - '-t'
-    - 'gcr.io/$PROJECT_ID/go-sum:latest'
-    - '.'
-  - name: 'gcr.io/$PROJECT_ID/go-sum'
+    args: ['build', '-t', 'grc.io/$PROJECT_ID/go-sum:latest', '.']
+  
+  - id: "Push para o registry do Google"
+    name: 'gcr.io/$PROJECT_ID/go-sum'
     args: ['version']
   
   images:
