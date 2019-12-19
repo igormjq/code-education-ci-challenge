@@ -1,8 +1,10 @@
 steps:
     - id: "Rodando teste unitário"
       name: "gcr.io/cloud-builders/go"
+      env: ['GOPATH=/workspace']
       args: ['test']
     
     - id: "Rodando build da imagem"
       name: "gcr.io/cloud-builders/go"
+      env: ['GOPATH=/workspace']
       args: ['build', '-ldflags', "'-s -w'", './src/main.go']
