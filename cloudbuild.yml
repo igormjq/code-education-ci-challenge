@@ -9,6 +9,6 @@ steps:
     env: ['PROJECT_ROOT=workspace']
     args: ['build', './src/app/main.go']
   
-  - id: "Gerando build da imagem"
-    name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/go-build', '.']
+  # - id: "Gerando build da imagem"
+  #   name: 'gcr.io/cloud-builders/docker'
+  #   args: ['build', '-t', 'gcr.io/$PROJECT_ID/go-build', '.']
